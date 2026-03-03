@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="post-list">
-  {{ $paginator := .Paginate .Site.RegularPages }}
+  {{ $paginator := .Paginate (where .Site.RegularPages "Section" "post") }}
   {{ range $paginator.Pages }}
   <article class="post {{ if not .Title }}post--microblog{{ end }}">
     {{ if .Title }}
