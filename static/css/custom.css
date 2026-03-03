@@ -1,0 +1,240 @@
+/* -----------------------------------------------
+   Minimalist Avenir — micro.blog theme
+   ----------------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-text:       #1a1a1a;
+  --color-muted:      #888;
+  --color-link:       #1a1a1a;
+  --color-link-hover: #555;
+  --color-bg:         #fff;
+  --color-border:     #e8e8e8;
+
+  --font-body: "Avenir Next", "Avenir", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --text-base:   1.0625rem;   /* ~17px */
+  --line-height: 1.7;
+  --max-width:   640px;
+  --space:       2rem;
+}
+
+/* Base */
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--line-height);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+/* Layout */
+
+.site-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space) 1.25rem;
+}
+
+/* Header */
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: calc(var(--space) * 2);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.site-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-nav a {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--color-text);
+}
+
+/* Post list */
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) * 1.5);
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Separator between posts */
+.post + .post {
+  padding-top: calc(var(--space) * 1.5);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Long-form post titles */
+.post-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+.post-title a {
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-border);
+}
+
+/* Post content */
+.post-content {
+  margin: 0;
+}
+
+.post-content p {
+  margin: 0 0 0.75em;
+}
+
+.post-content p:last-child {
+  margin-bottom: 0;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.post-content a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-border);
+}
+
+.post-content a:hover {
+  text-decoration-color: var(--color-text);
+}
+
+/* Microblog posts — slightly smaller date */
+.post--microblog .post-date {
+  margin-top: 0.1rem;
+}
+
+/* Date */
+.post-date {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.post-date a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.post-date a:hover {
+  color: var(--color-text);
+}
+
+/* Single post */
+.post--single .post-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.post--single .post-date {
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: calc(var(--space) * 2);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.pagination a {
+  color: var(--color-muted);
+}
+
+.pagination a:hover {
+  color: var(--color-text);
+}
+
+/* Footer */
+.site-footer {
+  margin-top: calc(var(--space) * 3);
+  padding-top: var(--space);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: var(--color-muted);
+}
+
+.site-footer a:hover {
+  color: var(--color-text);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .site-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: var(--space);
+  }
+}
