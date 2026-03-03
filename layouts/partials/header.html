@@ -1,9 +1,0 @@
-<header class="site-header">
-  <a class="site-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-  <nav class="site-nav">
-    {{ range where .Site.RegularPages "Type" "page" }}
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ end }}
-    <a href="{{ .Site.BaseURL }}feed.xml">RSS</a>
-  </nav>
-</header>
