@@ -1,6 +1,7 @@
 {{ define "main" }}
 <div class="post-list">
-  {{ range .Paginator.Pages }}
+  {{ $paginator := .Paginate .Site.RegularPages }}
+  {{ range $paginator.Pages }}
   <article class="post {{ if not .Title }}post--microblog{{ end }}">
     {{ if .Title }}
     <h2 class="post-title">
@@ -14,13 +15,13 @@
   </article>
   {{ end }}
 
-  {{ if or .Paginator.HasPrev .Paginator.HasNext }}
+  {{ if or $paginator.HasPrev $paginator.HasNext }}
   <nav class="pagination">
-    {{ if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}">Older</a>
+    {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}">Older</a>
     {{ end }}
-    {{ if .Paginator.HasPrev }}
-    <a href="{{ .Paginator.Prev.URL }}">Newer</a>
+    {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}">Newer</a>
     {{ end }}
   </nav>
   {{ end }}

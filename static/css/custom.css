@@ -55,7 +55,7 @@ a:hover {
 .site-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--space) 1.25rem;
+  padding: 1.25rem 1.25rem var(--space);
 }
 
 /* Header */
@@ -64,7 +64,7 @@ a:hover {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: calc(var(--space) * 2);
+  margin-bottom: 1.25rem;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
@@ -159,6 +159,14 @@ a:hover {
 
 .post-content a:hover {
   text-decoration-color: var(--color-text);
+}
+
+.post-content blockquote {
+  font-style: italic;
+  margin: 0.75em 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--color-border);
+  color: var(--color-muted);
 }
 
 /* Microblog posts — slightly smaller date */
